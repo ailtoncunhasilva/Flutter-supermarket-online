@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "957265694237",
+    "project_id": "compras-online-6241e",
+    "storage_bucket": "compras-online-6241e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:957265694237:android:533b8098aabe67430580f4",
+        "android_client_info": {
+          "package_name": "br.com.cunha.supermercado_ac"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "957265694237-odgj986899r31hpcv06q4r27tumglk8l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC69Y0waxX_B_jc3GpI4rzCE-FTPCj-kaw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "957265694237-odgj986899r31hpcv06q4r27tumglk8l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
