@@ -8,6 +8,8 @@ class Store{
     name = storeDocument['name'] as String;
     image = storeDocument['image'] as String;
     image1 = storeDocument['image1'] as String;
+    information1 = storeDocument['information1'] as String;
+    information2 = storeDocument['information2'] as String;
   }
 
   String id;
@@ -15,5 +17,7 @@ class Store{
   String name;
   String image;
   String image1;
+  String information1;
+  String information2;
 
 }

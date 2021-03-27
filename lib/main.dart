@@ -29,13 +29,13 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
-          primaryColor: Colors.purple[800],
+          primaryColor: Colors.purple[400],
           visualDensity: VisualDensity.adaptivePlatformDensity,
-          cursorColor: Colors.purple[800],
+          cursorColor: Colors.purple[400],
           appBarTheme: AppBarTheme(
             elevation: 0,
           ),
-          scaffoldBackgroundColor: Colors.purple[800],
+          scaffoldBackgroundColor: Colors.purple[400],
         ),
         home: SplashScreen(),
       ),
