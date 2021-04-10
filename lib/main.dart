@@ -1,6 +1,6 @@
-//import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:supermercado_ac/models/food_manager.dart';
 import 'package:supermercado_ac/models/store_manager.dart';
 import 'package:supermercado_ac/models/user_manager.dart';
 import 'package:supermercado_ac/screens/splash_screen.dart';
@@ -21,13 +21,20 @@ class MyApp extends StatelessWidget {
           lazy: false,
         ),
         ChangeNotifierProvider(
+          create: (_) => FoodManager(),
+          lazy: false,
+        ),
+        ChangeNotifierProvider(
           create: (_) => StoreManager(),
           lazy: false,
         ),
+        /*ChangeNotifierProvider(
+          create: (_) => ProductManager(),
+          lazy: false,
+        ),*/
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
         theme: ThemeData(
           primaryColor: Colors.purple[400],
           visualDensity: VisualDensity.adaptivePlatformDensity,

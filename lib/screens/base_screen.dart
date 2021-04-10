@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:supermercado_ac/common/custom_drawer/custom_drawer.dart';
 import 'package:supermercado_ac/models/page_manager.dart';
+import 'package:supermercado_ac/screens/food_screen.dart';
 import 'package:supermercado_ac/screens/home_page.dart';
 import 'package:supermercado_ac/screens/stores_screen.dart';
 
@@ -16,6 +17,7 @@ class BaseScreen extends StatelessWidget {
         controller: pageController,
         physics: NeverScrollableScrollPhysics(),
         children: [
+          FoodScreen(),
           StoresScreen(),
           Scaffold(
             drawer: CustomDrawer(),

@@ -4,6 +4,7 @@ class Store{
 
   Store.fromDocument(DocumentSnapshot storeDocument){
     id = storeDocument.documentID;
+    doc = storeDocument.documentID;
     subtitle = storeDocument['subtitle'] as String;
     name = storeDocument['name'] as String;
     image = storeDocument['image'] as String;
@@ -13,6 +14,7 @@ class Store{
   }
 
   String id;
+  String doc;
   String subtitle;
   String name;
   String image;

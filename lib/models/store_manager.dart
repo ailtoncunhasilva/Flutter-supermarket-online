@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:supermercado_ac/models/store.dart';
 
-class StoreManager extends ChangeNotifier{
+class StoreManager extends ChangeNotifier {
   StoreManager() {
     _loadAllStore();
   }
