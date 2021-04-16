@@ -11,12 +11,34 @@ class FoodManager extends ChangeNotifier {
 
   List<Product> foodList = [];
 
+  String _search = '';
+
+  String get search => _search;
+
+  set search(String value) {
+    _search = value;
+    notifyListeners();
+  }
+
+  List<Product> get filteredFoodProducts {
+    final List<Product> filteredFoodProducts = [];
+
+    if (search.isEmpty) {
+      filteredFoodProducts.addAll(foodList);
+    } else {
+      filteredFoodProducts.addAll(foodList
+          .where((f) => f.name.toLowerCase().contains(search.toLowerCase())));
+    }
+
+    return filteredFoodProducts;
+  }
+
   Future<void> allFoodList() async {
     final QuerySnapshot foodQuery =
         await firestore.collection('Alimentos normais').getDocuments();
 
     foodList = foodQuery.documents.map((e) => Product.fromDocument(e)).toList();
 
-    notifyListeners();   
+    notifyListeners();
   }
 }

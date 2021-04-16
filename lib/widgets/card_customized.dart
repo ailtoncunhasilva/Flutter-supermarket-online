@@ -10,16 +10,17 @@ class CardCustomized extends StatelessWidget {
       this.descriptionFirebase, this.priceFirebase);
 
   final RoundedRectangleBorder shape = RoundedRectangleBorder(
-    borderRadius: BorderRadius.circular(26),
+    borderRadius: BorderRadius.circular(6),
   );
 
   @override
   Widget build(BuildContext context) {
     return Card(
+      elevation: 4,
       shape: shape,
-      margin: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      margin: const EdgeInsets.symmetric(horizontal: 2, vertical: 2),
       child: Padding(
-        padding: const EdgeInsets.all(6),
+        padding: const EdgeInsets.all(1),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -27,23 +28,17 @@ class CardCustomized extends StatelessWidget {
               height: 80,
               width: 80,
               decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [Colors.grey[100], Colors.grey[400]],
-                  ),
-                  border: Border.all(
-                    color: Theme.of(context).primaryColor,
-                    width: 1.0,
-                  ),
-                  borderRadius: BorderRadius.circular(18),
-                  image: DecorationImage(
-                    image: NetworkImage(imageFirebase),
-                  )),
+                image: DecorationImage(
+                  image: NetworkImage(imageFirebase),
+                ),
+              ),
             ),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.only(left: 4),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     textStyle(
                         text: titleFirebase,
@@ -54,48 +49,23 @@ class CardCustomized extends StatelessWidget {
                         size: 13.0,
                         color: Colors.grey[600]),
                     Container(
+                      padding: const EdgeInsets.fromLTRB(6, 1, 6, 1),
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
-                          colors: [Colors.purple[100], Colors.purple[400]],
+                          colors: [Colors.purple[50], Colors.purple[300]],
                         ),
-                        borderRadius: BorderRadius.circular(16),
+                        borderRadius: BorderRadius.circular(6),
                       ),
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(12, 4, 12, 4),
-                        child: textStyle(
-                          text: priceFirebase.toString(),
-                          size: 16.0,
-                          family: 'Anton',
-                        ),
+                      //child: Padding(
+                      //padding: const EdgeInsets.fromLTRB(12, 4, 12, 4),
+                      child: textStyle(
+                        text: priceFirebase.toString(),
+                        size: 16.0,
+                        family: 'Anton',
                       ),
+                      //),
                     ),
                   ],
-                ),
-              ),
-            ),
-            Card(
-              elevation: 8,
-              shape: shape,
-              child: Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(26),
-                  gradient: LinearGradient(
-                    colors: [Colors.purple[200], Colors.purple[600]],
-                  ),
-                ),
-                child: FlatButton(
-                  colorBrightness: Brightness.light,
-                  splashColor: Colors.purple[900],
-                  padding: const EdgeInsets.all(4),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(26),
-                  ),
-                  onPressed: () {},
-                  child: Text(
-                    'Comprar',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(color: Colors.white),
-                  ),
                 ),
               ),
             ),
@@ -117,3 +87,38 @@ Widget textStyle({text, color, size, family, weight}) {
     ),
   );
 }
+
+/*showDialog(
+                        context: context,
+                        builder: (context) {
+                          return AlertDialog(
+                            scrollable: true,
+                            content: Text('Produto adicionado ao carrinho'),
+                          );
+                        });*/
+
+/*Card(
+              elevation: 8,
+              shape: shape,
+              child: Container(
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(26),
+                  gradient: LinearGradient(
+                    colors: [Colors.purple[200], Colors.purple[600]],
+                  ),
+                ),
+                child: FlatButton(
+                  colorBrightness: Brightness.light,
+                  splashColor: Colors.purple[900],
+                  padding: const EdgeInsets.all(4),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(26),
+                  ),
+                  onPressed: (){},
+                  child: Icon(
+                    Icons.add_shopping_cart,
+                    color: Colors.white,
+                  ),
+                ),
+              ),
+            ),*/
