@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:supermercado_ac/models/cart_manager.dart';
 import 'package:supermercado_ac/models/food_manager.dart';
 import 'package:supermercado_ac/models/store_manager.dart';
 import 'package:supermercado_ac/models/user_manager.dart';
@@ -24,6 +25,10 @@ class MyApp extends StatelessWidget {
           create: (_) => FoodManager(),
           lazy: false,
         ),
+        Provider(
+          create: (_) => CartManager(),
+          lazy: false,
+        ),
         ChangeNotifierProvider(
           create: (_) => StoreManager(),
           lazy: false,
@@ -36,13 +41,13 @@ class MyApp extends StatelessWidget {
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primaryColor: Colors.purple[400],
+          primaryColor: Colors.purple[600],
           visualDensity: VisualDensity.adaptivePlatformDensity,
-          cursorColor: Colors.purple[400],
+          cursorColor: Colors.purple[600],
           appBarTheme: AppBarTheme(
             elevation: 0,
           ),
-          scaffoldBackgroundColor: Colors.purple[400],
+          //scaffoldBackgroundColor: Colors.purple[400],
         ),
         home: SplashScreen(),
       ),

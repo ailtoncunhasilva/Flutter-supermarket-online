@@ -18,7 +18,7 @@ class CardCustomized extends StatelessWidget {
     return Card(
       elevation: 4,
       shape: shape,
-      margin: const EdgeInsets.symmetric(horizontal: 2, vertical: 2),
+      margin: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
       child: Padding(
         padding: const EdgeInsets.all(1),
         child: Row(
@@ -59,7 +59,7 @@ class CardCustomized extends StatelessWidget {
                       //child: Padding(
                       //padding: const EdgeInsets.fromLTRB(12, 4, 12, 4),
                       child: textStyle(
-                        text: priceFirebase.toString(),
+                        text: 'R\$ ${priceFirebase.toString()}',
                         size: 16.0,
                         family: 'Anton',
                       ),

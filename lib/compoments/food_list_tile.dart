@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:supermercado_ac/models/cart_manager.dart';
 import 'package:supermercado_ac/models/product.dart';
 import 'package:supermercado_ac/models/user_manager.dart';
 import 'package:supermercado_ac/screens/photo_product_screen.dart';
@@ -36,13 +37,16 @@ class FoodTile extends StatelessWidget {
               height: 80,
               child: Card(
                 elevation: 4,
-                color: Colors.purple[800],
-                margin: const EdgeInsets.symmetric(horizontal: 2, vertical: 2),
+                color: Colors.purple[600],
+                margin: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
                 shape: shape,
                 child: FlatButton(
                   splashColor: Colors.white,
                   onPressed: () {
                     if (context.read<UserManager>().isLoggedIn) {
+
+                      context.read<CartManager>().addToCart(product);//Add product to cart
+
                       Scaffold.of(context).showSnackBar(
                         SnackBar(
                           backgroundColor: Colors.green,

@@ -4,6 +4,7 @@ import 'package:supermercado_ac/common/custom_drawer/custom_drawer.dart';
 import 'package:supermercado_ac/compoments/food_list_tile.dart';
 import 'package:supermercado_ac/compoments/search_dialog.dart';
 import 'package:supermercado_ac/models/food_manager.dart';
+import 'package:supermercado_ac/widgets/floating_button.dart';
 
 class FoodScreen extends StatelessWidget {
   @override
@@ -64,18 +65,42 @@ class FoodScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Consumer<FoodManager>(
-        builder: (_, foodManager, __) {
-          final filteredFoodProducts = foodManager.filteredFoodProducts;
-          return ListView.builder(
-            padding: const EdgeInsets.all(4),
-            itemCount: filteredFoodProducts.length,
-            itemBuilder: (_, index) {
-              return FoodTile(filteredFoodProducts[index]);
-            },
-          );
-        },
+      body: Column(
+        children: [
+          /*Card(
+            margin: const EdgeInsets.symmetric(horizontal: 7),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(6),
+            ),
+            child:*/ Container(
+              height: MediaQuery.of(context).size.height * 0.15,
+              decoration: BoxDecoration(
+                //borderRadius: BorderRadius.circular(6),
+                image: DecorationImage(
+                  image: AssetImage('images/alimenticio.jpg'),
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+          //),
+          Expanded(
+            child: Consumer<FoodManager>(
+              builder: (_, foodManager, __) {
+                final filteredFoodProducts = foodManager.filteredFoodProducts;
+                return ListView.builder(
+                  padding: const EdgeInsets.all(4),
+                  itemCount: filteredFoodProducts.length,
+                  itemBuilder: (_, index) {
+                    return FoodTile(filteredFoodProducts[index]);
+                  },
+                );
+              },
+            ),
+          ),
+        ],
       ),
+      floatingActionButton: FloatingButton(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.startFloat,
     );
   }
 }
