@@ -36,58 +36,66 @@ class FoodTile extends StatelessWidget {
             child: Container(
               height: 80,
               child: Card(
-                elevation: 4,
-                color: Colors.purple[600],
-                margin: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
+                elevation: 6,
+                //color: Colors.purple[600],
+               margin: const EdgeInsets.symmetric(horizontal: 3, vertical: 3),
                 shape: shape,
-                child: FlatButton(
-                  splashColor: Colors.white,
-                  onPressed: () {
-                    if (context.read<UserManager>().isLoggedIn) {
+                child: Container(
+                  decoration: BoxDecoration(
+                        gradient: LinearGradient(
+                          colors: [Colors.purple[200], Colors.purple[800]],
+                        ),
+                        borderRadius: BorderRadius.circular(6),
+                      ),
+                  child: FlatButton(
+                    splashColor: Colors.white,
+                    onPressed: () {
+                      if (context.read<UserManager>().isLoggedIn) {
 
-                      context.read<CartManager>().addToCart(product);//Add product to cart
+                        context.read<CartManager>().addToCart(product);//Add product to cart
 
-                      Scaffold.of(context).showSnackBar(
-                        SnackBar(
-                          backgroundColor: Colors.green,
-                          duration: Duration(seconds: 2),
-                          content: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Icon(Icons.shopping_cart),
-                              Expanded(
-                                child: Text(
-                                  'Produto adicionado ao carrinho com sucesso',
-                                  textAlign: TextAlign.center,
+                        Scaffold.of(context).showSnackBar(
+                          SnackBar(
+                            backgroundColor: Colors.green,
+                            duration: Duration(seconds: 2),
+                            content: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Icon(Icons.shopping_cart),
+                                Expanded(
+                                  child: Text(
+                                    'Produto adicionado ao carrinho com sucesso',
+                                    textAlign: TextAlign.center,
+                                  ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                      );
-                    } else {
-                      Scaffold.of(context).showSnackBar(
-                        SnackBar(
-                          backgroundColor: Colors.redAccent,
-                          duration: Duration(seconds: 2),
-                          content: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [
-                              Icon(Icons.error_outline),
-                              Text(
-                                'Faça login para incluir produtos no carrinho',
-                                //textAlign: TextAlign.center,
-                              ),
-                            ],
+                        );
+                      } else {
+                        Scaffold.of(context).showSnackBar(
+                          SnackBar(
+                            backgroundColor: Colors.redAccent,
+                            duration: Duration(seconds: 2),
+                            content: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Icon(Icons.error_outline),
+                                Text(
+                                  'Faça login para incluir produtos no carrinho',
+                                  //textAlign: TextAlign.center,
+                                ),
+                              ],
+                            ),
                           ),
-                        ),
-                      );
-                    }
-                  },
-                  child: Icon(
-                    Icons.add_shopping_cart,
-                    size: 30,
-                    color: Colors.white,
+                        );
+                      }
+                    },
+                    child: Icon(
+                      Icons.add_shopping_cart,
+                      size: 30,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
               ),

@@ -2,11 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:supermercado_ac/models/cartproduct.dart';
 
 class CartTile extends StatelessWidget {
-
   CartTile(this.cartProduct);
 
   final CartProduct cartProduct;
-  
+
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -25,11 +24,32 @@ class CartTile extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(left: 8),
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(cartProduct.product.name),
-                    Text(cartProduct.product.description),
-                    Text('R\$ ${cartProduct.product.price.toStringAsFixed(2)}'),
+                    Text(cartProduct.product.name,
+                        style: TextStyle(
+                          fontSize: 14,
+                          color: Colors.black,
+                          fontWeight: FontWeight.bold,
+                        )),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 4),
+                      child: Text(
+                        cartProduct.product.description,
+                        style: TextStyle(
+                          color: Colors.black45,
+                        ),
+                      ),
+                    ),
+                    Text(
+                      'R\$ ${cartProduct.product.price.toStringAsFixed(2)}',
+                      style: TextStyle(
+                        color: Theme.of(context).primaryColor,
+                        //fontWeight: FontWeight.bold,
+                        fontSize: 16,
+                        fontFamily: 'Anton',
+                      ),
+                    ),
                   ],
                 ),
               ),

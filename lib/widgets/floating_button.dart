@@ -6,7 +6,7 @@ class FloatingButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton(
       elevation: 6,
-      backgroundColor: Colors.purple[300],
+      backgroundColor: Colors.purple[600],
       onPressed: (){
         Navigator.of(context).push(
           MaterialPageRoute(builder: (context) => CartScreen())
